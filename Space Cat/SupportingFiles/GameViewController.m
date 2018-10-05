@@ -7,26 +7,26 @@
 //
 
 #import "GameViewController.h"
-#import "GameScene.h"
+#import "TitleScene.h"
 
 @implementation GameViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
 
-    // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
+    // Load 'TitleScene.sks' as a GKScene. This provides gameplay related content
     // including entities and graphs.
-    GKScene *scene = [GKScene sceneWithFileNamed:@"GameScene"];
+    GKScene *scene = [GKScene sceneWithFileNamed:@"TitleScene"];
     
     // Get the SKScene from the loaded GKScene
-    GameScene *sceneNode = (GameScene *)scene.rootNode;
+    TitleScene *sceneNode = (TitleScene *)scene.rootNode;
     
     // Copy gameplay related content over to the scene
     sceneNode.entities = [scene.entities mutableCopy];
     sceneNode.graphs = [scene.graphs mutableCopy];
     
     // Set the scale mode to scale to fit the window
-    sceneNode.scaleMode = SKSceneScaleModeAspectFill;
+    sceneNode.scaleMode = SKSceneScaleModeAspectFit;
     
     SKView *skView = (SKView *)self.view;
     
