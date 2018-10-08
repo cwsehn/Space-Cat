@@ -13,6 +13,7 @@
 #import "SpaceDogNode.h"
 #import "GroundNode.h"
 #import "Util.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface GamePlayScene ()
 
@@ -24,6 +25,7 @@
 @property (nonatomic) SKAction *damageSFX;
 @property (nonatomic) SKAction *explodeSFX;
 @property (nonatomic) SKAction *laserSFX;
+@property (nonatomic) AVAudioPlayer *backgroundMusic;
 
 
 @end
@@ -56,6 +58,10 @@
     
     [self setUpSounds];
     
+}
+
+- (void) didMoveToView:(SKView *)view {
+    [self.backgroundMusic play];
 }
 
 - (void) update:(NSTimeInterval)currentTime {
@@ -91,6 +97,11 @@
 }
 
 - (void) setUpSounds {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Gameplay" withExtension:@"mp3"];
+    self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    self.backgroundMusic.numberOfLoops = -1;
+    [self.backgroundMusic prepareToPlay];
+    
     self.damageSFX = [SKAction playSoundFileNamed:@"Damage.caf" waitForCompletion:NO];
     self.explodeSFX = [SKAction playSoundFileNamed:@"Explode.caf" waitForCompletion:NO];
     self.laserSFX = [SKAction playSoundFileNamed:@"Laser.caf" waitForCompletion:NO];

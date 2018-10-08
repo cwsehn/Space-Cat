@@ -24,6 +24,10 @@
 		13664B67215602290037A131 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 13664B66215602290037A131 /* Util.m */; };
 		139EA7D8214C9E8900C6524B /* TitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 139EA7D7214C9E8900C6524B /* TitleScene.m */; };
 		13AC152221582B4300737876 /* SpaceDogNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC152121582B4300737876 /* SpaceDogNode.m */; };
+		13CCFE8A216AEC7F00908749 /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13CCFE87216AEC7F00908749 /* Gameplay.mp3 */; };
+		13CCFE8B216AEC7F00908749 /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13CCFE88216AEC7F00908749 /* GameOver.mp3 */; };
+		13CCFE8C216AEC7F00908749 /* StartScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13CCFE89216AEC7F00908749 /* StartScreen.mp3 */; };
+		13CCFE8F216AECC900908749 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CCFE8E216AECC900908749 /* AVFoundation.framework */; };
 		13F17D3D2150A2CE008608FD /* MachineNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F17D3C2150A2CE008608FD /* MachineNode.m */; };
 		13F17D402150A9EE008608FD /* SpaceCatNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F17D3F2150A9EE008608FD /* SpaceCatNode.m */; };
 		13F6B7CC214F4E0300C1DD19 /* GamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F6B7CB214F4E0200C1DD19 /* GamePlayScene.m */; };
@@ -58,6 +62,10 @@
 		139EA7D7214C9E8900C6524B /* TitleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleScene.m; sourceTree = "<group>"; };
 		13AC152021582B4300737876 /* SpaceDogNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceDogNode.h; sourceTree = "<group>"; };
 		13AC152121582B4300737876 /* SpaceDogNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceDogNode.m; sourceTree = "<group>"; };
+		13CCFE87216AEC7F00908749 /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gameplay.mp3; path = "SpaceCat-Assets/Music/Gameplay.mp3"; sourceTree = SOURCE_ROOT; };
+		13CCFE88216AEC7F00908749 /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = GameOver.mp3; path = "SpaceCat-Assets/Music/GameOver.mp3"; sourceTree = SOURCE_ROOT; };
+		13CCFE89216AEC7F00908749 /* StartScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = StartScreen.mp3; path = "SpaceCat-Assets/Music/StartScreen.mp3"; sourceTree = SOURCE_ROOT; };
+		13CCFE8E216AECC900908749 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		13F17D3B2150A2CE008608FD /* MachineNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachineNode.h; sourceTree = "<group>"; };
 		13F17D3C2150A2CE008608FD /* MachineNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachineNode.m; sourceTree = "<group>"; };
 		13F17D3E2150A9EE008608FD /* SpaceCatNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceCatNode.h; sourceTree = "<group>"; };
@@ -73,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CCFE8F216AECC900908749 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +91,9 @@
 		130060D82165C2E80079AC8A /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				13CCFE88216AEC7F00908749 /* GameOver.mp3 */,
+				13CCFE87216AEC7F00908749 /* Gameplay.mp3 */,
+				13CCFE89216AEC7F00908749 /* StartScreen.mp3 */,
 				130060DD2165C7650079AC8A /* Damage.caf */,
 				130060E02165C7650079AC8A /* Explode.caf */,
 				130060DE2165C7650079AC8A /* Laser.caf */,
@@ -95,6 +107,7 @@
 			children = (
 				1345B678214B3102003F8709 /* Space Cat */,
 				1345B677214B3102003F8709 /* Products */,
+				13CCFE8D216AECC800908749 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +147,14 @@
 				13664B66215602290037A131 /* Util.m */,
 			);
 			path = "Space Cat";
+			sourceTree = "<group>";
+		};
+		13CCFE8D216AECC800908749 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13CCFE8E216AECC900908749 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		13F6B7CD214F4E3900C1DD19 /* SupportingFiles */ = {
@@ -209,15 +230,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				130060E22165C7650079AC8A /* Laser.caf in Resources */,
+				13CCFE8B216AEC7F00908749 /* GameOver.mp3 in Resources */,
 				1345B688214B3102003F8709 /* Main.storyboard in Resources */,
 				130060E42165C7650079AC8A /* Explode.caf in Resources */,
 				130060E12165C7650079AC8A /* Damage.caf in Resources */,
+				13CCFE8C216AEC7F00908749 /* StartScreen.mp3 in Resources */,
 				130060E32165C7650079AC8A /* PressStart.caf in Resources */,
 				13F6B7D1214F533B00C1DD19 /* Sprites.atlas in Resources */,
 				1345B67D214B3102003F8709 /* TitleScene.sks in Resources */,
 				1345B68A214B3104003F8709 /* Assets.xcassets in Resources */,
 				1345B68D214B3104003F8709 /* LaunchScreen.storyboard in Resources */,
 				1345B67F214B3102003F8709 /* Actions.sks in Resources */,
+				13CCFE8A216AEC7F00908749 /* Gameplay.mp3 in Resources */,
 				13F6B7CF214F4EEE00C1DD19 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

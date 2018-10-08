@@ -28,6 +28,7 @@
     // Set the scale mode to scale to fit the window
     sceneNode.scaleMode = SKSceneScaleModeAspectFit;
     
+    
     SKView *skView = (SKView *)self.view;
     
     // Present the scene
