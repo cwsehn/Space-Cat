@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 static const int ProjectileSpeed = 400;
 static const int spaceDogMinSpeed = -100;
 static const int spaceDogMaxSpeed = -50;
+static const int MaxLives = 4;
 
 typedef NS_OPTIONS(uint32_t, CollisionCategory) {
     CollisionCategoryEnemy      = 1 << 0,   // 0001

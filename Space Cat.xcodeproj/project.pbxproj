@@ -21,6 +21,7 @@
 		1345B68D214B3104003F8709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1345B68B214B3104003F8709 /* LaunchScreen.storyboard */; };
 		1345B690214B3104003F8709 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1345B68F214B3104003F8709 /* main.m */; };
 		135D16502177BC8D003CBA92 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 135D164F2177BC8D003CBA92 /* Explosion.sks */; };
+		135D16532177CF00003CBA92 /* HudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 135D16522177CF00003CBA92 /* HudNode.m */; };
 		13664B632155E3910037A131 /* ProjectileNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13664B622155E3910037A131 /* ProjectileNode.m */; };
 		13664B67215602290037A131 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 13664B66215602290037A131 /* Util.m */; };
 		139EA7D8214C9E8900C6524B /* TitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 139EA7D7214C9E8900C6524B /* TitleScene.m */; };
@@ -56,6 +57,8 @@
 		1345B68E214B3104003F8709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1345B68F214B3104003F8709 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		135D164F2177BC8D003CBA92 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		135D16512177CF00003CBA92 /* HudNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HudNode.h; sourceTree = "<group>"; };
+		135D16522177CF00003CBA92 /* HudNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HudNode.m; sourceTree = "<group>"; };
 		13664B612155E3910037A131 /* ProjectileNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectileNode.h; sourceTree = "<group>"; };
 		13664B622155E3910037A131 /* ProjectileNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectileNode.m; sourceTree = "<group>"; };
 		13664B65215602290037A131 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				1345B67E214B3102003F8709 /* Actions.sks */,
 				139EA7D6214C9E8900C6524B /* TitleScene.h */,
 				139EA7D7214C9E8900C6524B /* TitleScene.m */,
+				135D16512177CF00003CBA92 /* HudNode.h */,
+				135D16522177CF00003CBA92 /* HudNode.m */,
 				13F6B7CA214F4E0200C1DD19 /* GamePlayScene.h */,
 				13F6B7CB214F4E0200C1DD19 /* GamePlayScene.m */,
 				130A81FA2159CA9000A0366E /* GroundNode.h */,
@@ -268,6 +273,7 @@
 				130A81FC2159CA9000A0366E /* GroundNode.m in Sources */,
 				13F17D3D2150A2CE008608FD /* MachineNode.m in Sources */,
 				13664B67215602290037A131 /* Util.m in Sources */,
+				135D16532177CF00003CBA92 /* HudNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 #import "SpaceDogNode.h"
 #import "GroundNode.h"
 #import "Util.h"
+#import "HudNode.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface GamePlayScene ()
@@ -57,6 +58,9 @@
     [self addChild:ground];
     
     [self setUpSounds];
+    
+    HudNode *hud = [HudNode hudAtPosition:CGPointMake(0, self.frame.size.height-20) inFrame:self.frame];
+    [self addChild:hud];
     
 }
 
