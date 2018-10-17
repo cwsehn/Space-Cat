@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SpaceDogNode : SKSpriteNode
 + (instancetype) spaceDogOfType: (SpaceDogType)type;
+@property (nonatomic) BOOL wounded;
+@property (nonatomic) BOOL B_Type;
+- (void) iveBeenHit;
+
 @end
 
 NS_ASSUME_NONNULL_END

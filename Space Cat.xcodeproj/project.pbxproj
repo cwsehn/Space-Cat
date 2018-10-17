@@ -20,6 +20,7 @@
 		1345B68A214B3104003F8709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1345B689214B3104003F8709 /* Assets.xcassets */; };
 		1345B68D214B3104003F8709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1345B68B214B3104003F8709 /* LaunchScreen.storyboard */; };
 		1345B690214B3104003F8709 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1345B68F214B3104003F8709 /* main.m */; };
+		135D16502177BC8D003CBA92 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 135D164F2177BC8D003CBA92 /* Explosion.sks */; };
 		13664B632155E3910037A131 /* ProjectileNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13664B622155E3910037A131 /* ProjectileNode.m */; };
 		13664B67215602290037A131 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 13664B66215602290037A131 /* Util.m */; };
 		139EA7D8214C9E8900C6524B /* TitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 139EA7D7214C9E8900C6524B /* TitleScene.m */; };
@@ -54,6 +55,7 @@
 		1345B68C214B3104003F8709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1345B68E214B3104003F8709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1345B68F214B3104003F8709 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		135D164F2177BC8D003CBA92 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		13664B612155E3910037A131 /* ProjectileNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectileNode.h; sourceTree = "<group>"; };
 		13664B622155E3910037A131 /* ProjectileNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectileNode.m; sourceTree = "<group>"; };
 		13664B65215602290037A131 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				13F17D3C2150A2CE008608FD /* MachineNode.m */,
 				13664B612155E3910037A131 /* ProjectileNode.h */,
 				13664B622155E3910037A131 /* ProjectileNode.m */,
+				135D164F2177BC8D003CBA92 /* Explosion.sks */,
 				13F6B7D0214F533B00C1DD19 /* Sprites.atlas */,
 				1345B689214B3104003F8709 /* Assets.xcassets */,
 				1345B68E214B3104003F8709 /* Info.plist */,
@@ -231,6 +234,7 @@
 			files = (
 				130060E22165C7650079AC8A /* Laser.caf in Resources */,
 				13CCFE8B216AEC7F00908749 /* GameOver.mp3 in Resources */,
+				135D16502177BC8D003CBA92 /* Explosion.sks in Resources */,
 				1345B688214B3102003F8709 /* Main.storyboard in Resources */,
 				130060E42165C7650079AC8A /* Explode.caf in Resources */,
 				130060E12165C7650079AC8A /* Damage.caf in Resources */,

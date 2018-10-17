@@ -156,18 +156,25 @@
         NSLog(@"BAM!");
         SpaceDogNode *spaceDog = (SpaceDogNode *)firstBody.node;
         ProjectileNode *projectile = (ProjectileNode *)secondBody.node;
-        [spaceDog removeFromParent];
-        [projectile removeFromParent];
-        [self runAction:self.explodeSFX];
+        if (spaceDog.wounded) {
+            [spaceDog removeFromParent];
+            [projectile removeFromParent];
+            [self runAction:self.explodeSFX];
+            [self createDebrisAtPosition:contact.contactPoint];
+        } else { spaceDog.wounded = YES;
+            [spaceDog iveBeenHit];
+        }
+        
     } else if (firstBody.categoryBitMask == CollisionCategoryEnemy &&
                secondBody.categoryBitMask == CollisionCategoryGround) {
         NSLog(@"Hit Ground");
         [self runAction:self.damageSFX];
         SpaceDogNode *spaceDog = (SpaceDogNode *)firstBody.node;
         [spaceDog removeFromParent];
+        [self createDebrisAtPosition:contact.contactPoint];
         
     }
-    [self createDebrisAtPosition:contact.contactPoint];
+    
 }
 
 -(void) createDebrisAtPosition: (CGPoint)position {
@@ -192,6 +199,16 @@
             [debris removeFromParent];
         }];
     }
+    
+    NSString *explosionPath = [[NSBundle mainBundle] pathForResource:@"Explosion" ofType:@"sks"];
+    SKEmitterNode *explosion = [NSKeyedUnarchiver unarchiveObjectWithFile:explosionPath];
+    explosion.position = position;
+    [self addChild:explosion];
+    [explosion runAction:[SKAction waitForDuration:2.0] completion: ^{
+        [explosion removeFromParent];
+    }];
+    
+    
 }
 
 
