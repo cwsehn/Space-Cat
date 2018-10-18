@@ -14,6 +14,7 @@
 #import "GroundNode.h"
 #import "Util.h"
 #import "HudNode.h"
+#import "GameOverNode.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface GamePlayScene ()
@@ -27,6 +28,9 @@
 @property (nonatomic) SKAction *explodeSFX;
 @property (nonatomic) SKAction *laserSFX;
 @property (nonatomic) AVAudioPlayer *backgroundMusic;
+@property (nonatomic) BOOL gameOver;
+@property (nonatomic) BOOL restart;
+@property (nonatomic) BOOL gameOverDisplayed;
 
 
 @end
@@ -41,6 +45,9 @@
     self.totalGameTime = 0;
     self.addEnemyTimeInterval = 1.25;
     self.minSpeed = spaceDogMinSpeed;
+    self.restart = NO;
+    self.gameOver = NO;
+    self.gameOverDisplayed = NO;
     
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
     background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
@@ -74,7 +81,7 @@
         self.totalGameTime += currentTime - self.lastUpdateTimeInterval;
     }
     
-    if (self.timeSinceEnemyAdded > self.addEnemyTimeInterval) {
+    if (self.timeSinceEnemyAdded > self.addEnemyTimeInterval && !self.gameOver) {
         [self addSpaceDog];
         self.timeSinceEnemyAdded = 0;
     }
@@ -98,6 +105,10 @@
         self.minSpeed = -100;
     }
     
+    if (self.gameOver && !self.gameOverDisplayed) {
+        [self performGameOver];
+    }
+    
 }
 
 - (void) setUpSounds {
@@ -112,10 +123,26 @@
 }
 
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    for (UITouch *touch in touches) {
-        CGPoint position = [touch locationInNode:self];
-        [self shootProjectileTowardsPosition:position];
+    if (!self.gameOver) {
+        for (UITouch *touch in touches) {
+            CGPoint position = [touch locationInNode:self];
+            [self shootProjectileTowardsPosition:position];
+        }
+    } else if (self.restart) {
+        for (SKNode *node in [self children]) {
+            [node removeFromParent];
+        }
+        
+        GamePlayScene *scene = [GamePlayScene sceneWithSize:self.frame.size];
+        [self.view presentScene:scene];
     }
+}
+
+- (void) performGameOver {
+    GameOverNode *gameOver = [GameOverNode gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+    [self addChild:gameOver];
+    self.gameOverDisplayed = YES;
+    self.restart = YES;
 }
 
 - (void) shootProjectileTowardsPosition:(CGPoint)position {
@@ -161,6 +188,7 @@
         SpaceDogNode *spaceDog = (SpaceDogNode *)firstBody.node;
         ProjectileNode *projectile = (ProjectileNode *)secondBody.node;
         if (spaceDog.wounded) {
+            [self addPoints: PointsPerHit];
             [spaceDog removeFromParent];
             [projectile removeFromParent];
             [self runAction:self.explodeSFX];
@@ -177,8 +205,20 @@
         [spaceDog removeFromParent];
         [self createDebrisAtPosition:contact.contactPoint];
         
+        [self loseLife];
+        
     }
     
+}
+
+-(void) addPoints:(NSInteger)points {
+    HudNode *hud = (HudNode*)[self childNodeWithName:@"HUD"];
+    [hud addPoints:points];
+}
+
+-(void) loseLife {
+    HudNode *hud = (HudNode*)[self childNodeWithName:@"HUD"];
+    self.gameOver = [hud loseLife];
 }
 
 -(void) createDebrisAtPosition: (CGPoint)position {

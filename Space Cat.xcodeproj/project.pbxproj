@@ -12,6 +12,7 @@
 		130060E32165C7650079AC8A /* PressStart.caf in Resources */ = {isa = PBXBuildFile; fileRef = 130060DF2165C7650079AC8A /* PressStart.caf */; };
 		130060E42165C7650079AC8A /* Explode.caf in Resources */ = {isa = PBXBuildFile; fileRef = 130060E02165C7650079AC8A /* Explode.caf */; };
 		130A81FC2159CA9000A0366E /* GroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 130A81FB2159CA9000A0366E /* GroundNode.m */; };
+		13388F53217930A700EEE62A /* GameOverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13388F52217930A700EEE62A /* GameOverNode.m */; };
 		1345B67B214B3102003F8709 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1345B67A214B3102003F8709 /* AppDelegate.m */; };
 		1345B67D214B3102003F8709 /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1345B67C214B3102003F8709 /* TitleScene.sks */; };
 		1345B67F214B3102003F8709 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1345B67E214B3102003F8709 /* Actions.sks */; };
@@ -44,6 +45,8 @@
 		130060E02165C7650079AC8A /* Explode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Explode.caf; path = "SpaceCat-Assets/SFX/Explode.caf"; sourceTree = SOURCE_ROOT; };
 		130A81FA2159CA9000A0366E /* GroundNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroundNode.h; sourceTree = "<group>"; };
 		130A81FB2159CA9000A0366E /* GroundNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroundNode.m; sourceTree = "<group>"; };
+		13388F51217930A700EEE62A /* GameOverNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameOverNode.h; sourceTree = "<group>"; };
+		13388F52217930A700EEE62A /* GameOverNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOverNode.m; sourceTree = "<group>"; };
 		1345B676214B3102003F8709 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1345B679214B3102003F8709 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1345B67A214B3102003F8709 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				135D16522177CF00003CBA92 /* HudNode.m */,
 				13F6B7CA214F4E0200C1DD19 /* GamePlayScene.h */,
 				13F6B7CB214F4E0200C1DD19 /* GamePlayScene.m */,
+				13388F51217930A700EEE62A /* GameOverNode.h */,
+				13388F52217930A700EEE62A /* GameOverNode.m */,
 				130A81FA2159CA9000A0366E /* GroundNode.h */,
 				130A81FB2159CA9000A0366E /* GroundNode.m */,
 				13F17D3E2150A9EE008608FD /* SpaceCatNode.h */,
@@ -265,6 +270,7 @@
 				139EA7D8214C9E8900C6524B /* TitleScene.m in Sources */,
 				1345B685214B3102003F8709 /* GameViewController.m in Sources */,
 				13664B632155E3910037A131 /* ProjectileNode.m in Sources */,
+				13388F53217930A700EEE62A /* GameOverNode.m in Sources */,
 				13F6B7CC214F4E0300C1DD19 /* GamePlayScene.m in Sources */,
 				1345B690214B3104003F8709 /* main.m in Sources */,
 				13AC152221582B4300737876 /* SpaceDogNode.m in Sources */,
