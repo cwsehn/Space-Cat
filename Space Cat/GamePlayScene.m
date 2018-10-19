@@ -28,6 +28,7 @@
 @property (nonatomic) SKAction *explodeSFX;
 @property (nonatomic) SKAction *laserSFX;
 @property (nonatomic) AVAudioPlayer *backgroundMusic;
+@property (nonatomic) AVAudioPlayer *gameOverMusic;
 @property (nonatomic) BOOL gameOver;
 @property (nonatomic) BOOL restart;
 @property (nonatomic) BOOL gameOverDisplayed;
@@ -117,6 +118,11 @@
     self.backgroundMusic.numberOfLoops = -1;
     [self.backgroundMusic prepareToPlay];
     
+    NSURL *gameOverURL = [[NSBundle mainBundle] URLForResource:@"GameOver" withExtension:@"mp3"];
+    self.gameOverMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:gameOverURL error:nil];
+    self.gameOverMusic.numberOfLoops = 1;
+    [self.gameOverMusic prepareToPlay];
+    
     self.damageSFX = [SKAction playSoundFileNamed:@"Damage.caf" waitForCompletion:NO];
     self.explodeSFX = [SKAction playSoundFileNamed:@"Explode.caf" waitForCompletion:NO];
     self.laserSFX = [SKAction playSoundFileNamed:@"Laser.caf" waitForCompletion:NO];
@@ -140,9 +146,14 @@
 
 - (void) performGameOver {
     GameOverNode *gameOver = [GameOverNode gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+    
     [self addChild:gameOver];
     self.gameOverDisplayed = YES;
     self.restart = YES;
+    [gameOver performAnimation];
+    
+    [self.backgroundMusic stop];
+    [self.gameOverMusic play];
 }
 
 - (void) shootProjectileTowardsPosition:(CGPoint)position {
